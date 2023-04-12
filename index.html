@@ -1,77 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Quiz Challenge04</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="whole"> <!--separating the page as a whole "box"-->
-      <header>
-        <a href=scores>Your High Score</a> <!--need to add the link in Javascript-->
-        <h1>Timer:</h1> <!--need to add the timer going backwards when they click on the button-->
-      </header>
-      <div class="quiz"> <!-- this is for the whole box implying the quiz-->
-        <div class="quiz-intro">
-          <h2>Coding Quiz Challenge</h2>
-          <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score and time by 10 seconds.</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>JavaScript Quiz Ch04</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body> 
+        <!--Creating the top "banner" where we can see the scores and the timer running-->
+        <header>
+            <h1 id="view-score">View High Scores</h1> 
+            <h1 class="timer">Timer in seconds: <span id="timer"></span></h1>
+        </header>
+
+        <!--First page where the quiz information will appear-->
+        <div id="starter-container" class="show">
+            <div class="container start">
+                <h2>Coding Quiz Challenge</h2>  
+                <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score and time by 10 seconds.
+                </p>
+                <button class="btn intro" id="start-game">Start Quiz</button>
+            </div>    
         </div>
-        <div class="container">
-          <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
-          </div>
-          <div id="question-container" class="hide">
-            <div id="answer-buttons" class="btn-grid">
-              <button class="btn">Answer 1</button>
-              <button class="btn">Answer 2</button>
-              <button class="btn">Answer 3</button>
-              <button class="btn">Answer 4</button>
+
+        <!--the questions begin and the buttons will as well-->
+        <div id="question-container" class="hide">
+            <div class="container questions">
+                <div id="question"></div>
+                <div id="answer-buttons" class="btn-grid"></div>
             </div>
-          </div>
-          
         </div>
-  </body>
-</html>
 
-
-<!-- función para que aplique el timer!!!!
-<script>
-  function Function() {
-  setTimeout(setAlert, 75);
-  }
-  function setAlert() {
-  alert("Yout ime is up!");
-  }
-</script>
-
--->
-
-
-    <!--
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
+        <!--Final part where the quiz ends and I need to fill out my initials and submit them-->
+        <div id="end-container" class="hide">
+           <div class="container end">
+            <div id=score-banner>
+                <h2>Quiz Completed! See below your final score and please enter your initials in the box.</h2>
+            </div>  
+            <form id="initials-form" class="initials">
+              <p> Initials:
+                <input type="text" name="initials" id="initials" class="text-input" />
+                <button class="btn startend" id="sumbit-score" type="submit">Submit</button> </p>
+              </form>
+            </div>
         </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+
+        <!--What should appear in my scores according to what I fill with initials and their scores-->
+        <div id="high-score-container" class="hide">
+          <div class="high-scores container">
+            <h2 class="high-score">High Scores</h2>
+            <ol id="high-score-list" class="score-list"></ol>
+        <div>
+            <button class="btn" id="go-back">Restart Quiz</button>
+            <button class="btn" id="clear-high-scores">Clear high scores</button>
         </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
         </div>
-      </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+
+    <!--This should appear at the bottom when the answer is correct or wrong-->
+    <div class="hide" id="correct">
+        <h3>Correct Answer</h3>
+    </div>
+    <div class="hide" id="wrong">
+        <h3>Wrong Answer</h3>
+    </div>
+
+    <script src="./script.js"></script> 
+</body>
 </html>
