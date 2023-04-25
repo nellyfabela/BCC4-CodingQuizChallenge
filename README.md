@@ -1,5 +1,4 @@
-## BCChallenge04
-ITESM Bootcamp Software Development Challenge04
+## BCC4 Coding Quiz Challenge
 
 ## Description
 
@@ -52,4 +51,4 @@ https://study.com/academy/practice/quiz-worksheet-arguments-return-values-in-jav
 and many more..
 
 
-# URL: https://nellyfabela.github.io/BCChallenge04/
+# URL: https://nellyfabela.github.io/BCC4-CodingQuizChallenge/
